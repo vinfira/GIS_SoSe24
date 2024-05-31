@@ -1,5 +1,4 @@
-document.getElementById('addItemForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Verhindert die Standardformulareinreichung
+document.getElementById('button').addEventListener('click', function(event) {
 
     var itemName = document.getElementById('itemName').value;
     var expiryDate = document.getElementById('expiryDate').value;
