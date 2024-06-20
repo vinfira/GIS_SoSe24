@@ -42,8 +42,11 @@ function saveItemToStorage(name, expiry) {
     localStorage.setItem('items', JSON.stringify(items));
 }
 
-function loadItems() {
-    var items = JSON.parse(localStorage.getItem('items')) || [];
+async function loadItems() {
+    //var items = JSON.parse(localStorage.getItem('items')) || [];
+    const response = await fetch('http://127.0.0.1:3000/inhalt');
+    const text = await response.text();
+    let items = JSON.parse(text)
     items.forEach(function(item) {
         addItem(item.name, item.expiry, true);
     });
